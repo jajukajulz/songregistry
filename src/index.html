@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Solidity Song Registry</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container" style="width: 650px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">Song Registry</h1>
+          <hr/>
+          <br/>
+          <div id="divNotificationBar"></div>
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div id="content" style="display: none;">
+            <!-- View Songs -->
+            <div id="divSongs">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Owner</th>
+                    <th scope="col">Song Title</th>
+                    <th scope="col">Song URL</th>
+                    <th scope="col">Song Price</th>
+                  </tr>
+                </thead>
+                <tbody id="tableSongs">
+                </tbody>
+              </table>
+            </div>
+            <hr/>
+              <!-- Get # of Registered Songs -->
+              <div id="divNumSongs"></div>
+              <button type="button" class="btn btn-primary btn-lg btn-block" id="numSongsButton">Show Total Number of Songs</button>
+            <hr/>
+              <!-- Coinbase Address -->
+              <p id="coinbaseAddress" class="text-center"></p>
+            <hr/>
+            <form id="formRegisterSong" onSubmit="App.registerSong(); return false;">
+              <div class="form-group">
+                <h1 class="h3 mb-3 font-weight-normal">Register Song</h1>
+                <label for="inputSongName" class="sr-only">Song Name</label>
+                <input type="text" id="inputSongName" class="form-control" placeholder="Song name" required autofocus>
+                <label for="inputSongURL" class="sr-only">Song URL</label>
+                <input type="url" id="inputSongURL" class="form-control" placeholder="Song url" required autofocus>
+                <label for="inputSongCost" class="sr-only">Song Cost</label>
+                <input type="number" id="inputSongCost" class="form-control" placeholder="Song cost" required autofocus>
+              </div>
+              <button type="submit" class="btn btn-primary">Register Song</button>
+              <hr />
+            </form>   
+          </div>
+        </div>
+      </div>
+      <p class="mt-5 mb-3 text-muted">&copy; FoodPrint 2019</p>
+    </div>
+
+    <!-- Add Songs -->
+    <!-- Buy Songs -->
+
+    <!-- jQuery and popper (required for Bootstrap) -->
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
